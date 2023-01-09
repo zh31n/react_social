@@ -1,8 +1,8 @@
-
+import s from './Sidebar.module.css'
 
 let Sidebar = () =>{
     return(
-        <div className="nav">
+        <div className={s.nav}>
             <a href="">Profile</a>
             <a href="">Feed</a>
             <a href="">Messanger</a>
