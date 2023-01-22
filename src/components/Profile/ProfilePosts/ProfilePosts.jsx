@@ -10,13 +10,13 @@ let ProfilePosts = () => {
                 <button>add post</button>
             </div>
             <div className={s.posts}>
+                <PostItem message='Здарова епта' likes=' 0'/>
+                <PostItem message='Я фронтом скоро стану' likes=' 5'/>
+                <PostItem message='Иди своей дорогой сталкер' likes=' 10'/>
+                {/* <PostItem />
                 <PostItem />
                 <PostItem />
-                <PostItem />
-                <PostItem />
-                <PostItem />
-                <PostItem />
-                <PostItem />
+                <PostItem /> */}
             </div>
         </div>
     );
