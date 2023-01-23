@@ -16,10 +16,8 @@ function App() {
           <Sidebar />
           <div className='content'>
             <Routes>
-              <Route path='/Profile' element={<Profile />}/>
-              <Route path='/Messanger' element={<Messanger />}/>
-              {/* <Profile />
-              <Messanger /> */}
+              <Route path='/Profile/*' element={<Profile />}/>
+              <Route path='/Messanger/*' element={<Messanger />}/>
             </Routes>
           </div>
         </div>
