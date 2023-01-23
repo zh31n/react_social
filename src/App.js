@@ -2,18 +2,29 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import Messanger from './components/Messanger/Messanger';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 
 
 function App() {
   return (
-    <div className='app_wrapper'>
-      <Header />
-      <div className='app_inner'>
-        <Sidebar />
-        <Profile />
+    <BrowserRouter>
+      <div className='app_wrapper'>
+        <Header />
+        <div className='app_inner'>
+          <Sidebar />
+          <div className='content'>
+            <Routes>
+              <Route path='/Profile' element={<Profile />}/>
+              <Route path='/Messanger' element={<Messanger />}/>
+              {/* <Profile />
+              <Messanger /> */}
+            </Routes>
+          </div>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,13 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import s from './Sidebar.module.css'
 
 let Sidebar = () =>{
     return(
         <div className={s.nav}>
-            <a href="">Profile</a>
-            <a href="">Feed</a>
-            <a href="">Messanger</a>
-            <a href="">Friends</a>
-            <a href="">Music</a>
+            <NavLink exact to='/profile' activeClassName={s.active}>Profile</NavLink>
+            <a >Feed</a>
+            <NavLink exact to='/messanger' activeClassName={s.active}>Messanger</NavLink>
+            <a >Friends</a>
+            <a >Music</a>
         </div>
     );
 }
