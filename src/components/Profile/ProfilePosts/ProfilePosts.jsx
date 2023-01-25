@@ -19,9 +19,6 @@ let ProfilePosts = () => {
                 <button>add post</button>
             </div>
             <div className={s.posts}>
-                {/* <PostItem message={postData[0].postTxt} likes={postData[0].likesCount} />
-                <PostItem message={postData[1].postTxt} likes={postData[1].likesCount} />
-                <PostItem message={postData[2].postTxt} likes={postData[2].likesCount} /> */}
                 {postElements}
             </div>
         </div>

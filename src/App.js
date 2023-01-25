@@ -7,7 +7,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
@@ -16,8 +16,8 @@ function App() {
           <Sidebar />
           <div className='content'>
             <Routes>
-              <Route path='/Profile/*' element={<Profile />}/>
-              <Route path='/Messanger/*' element={<Messanger />}/>
+              <Route path='/Profile/*' element={<Profile  />}/>
+              <Route path='/Messanger/*' element={<Messanger messages={props.message} users={props.user}/>}/>
             </Routes>
           </div>
         </div>
