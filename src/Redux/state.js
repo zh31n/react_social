@@ -46,6 +46,15 @@ let state = {
             { message: 'На цирлах', id: 2 },
             { message: 'Иди своей дорогой сталкер', id: 3 }
         ]
+    },
+
+    sideBar:{
+        friends:[
+            { FriendName: 'Artur', id: 1 },
+            { FriendName: 'Leha', id: 2 },
+            { FriendName: 'Sanya', id: 3 },
+            { FriendName: 'Nebr', id: 4 }
+        ]
     }
 }
 
