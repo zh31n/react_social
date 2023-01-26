@@ -9,8 +9,8 @@ let Messanger = (props) => {
 
     // Снизу методы для вывода данных из массива
 
-    let usersElements = props.users.map((user) => { return <UserName UserName={user.UserName} id={user.id} /> })
-    let messagesElement = props.messages.map((message) => { return <MessageItem message={message.message} /> })
+    let usersElements = props.state.users.map((user) => { return <UserName UserName={user.UserName} id={user.id} /> })
+    let messagesElement = props.state.messages.map((message) => { return <MessageItem message={message.message} /> })
 
 
     return (
