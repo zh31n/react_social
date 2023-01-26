@@ -1,11 +1,13 @@
 .UserName {
-  width: 150px;
+  width: 136px;
   height: 40px;
   display: flex;
   justify-content: start;
   text-align: left;
   padding-left: 1rem;
   align-items: center;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .UserName a {
