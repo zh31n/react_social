@@ -8,11 +8,11 @@ let Sidebar = (props) =>{
 
     return(
         <div className={s.nav}>
-            <NavLink exact to='/profile' activeClassName={s.active}>Profile</NavLink>
-            <a >Feed</a>
-            <NavLink exact to='/messanger' activeClassName={s.active}>Messanger</NavLink>
-            <a >Friends</a>
-            <a >Music</a>
+            <NavLink  to='/profile'>Profile</NavLink>
+            <a href='/'>Feed</a>
+            <NavLink  to='/messanger'>Messanger</NavLink>
+            <a href='/'>Friends</a>
+            <a href='/'>Music</a>
             <div className={s.block_friends}>
                 {/* <FriendItem state={props.state.friends} /> */}
                 {friendElements}

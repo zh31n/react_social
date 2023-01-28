@@ -2,7 +2,7 @@ import s from './MessageItem.module.css'
 
 let MessageItem = (props) => {
     return (
-        <div className="MessageItem">
+        <div className={s.messageItem}>
             {props.message}
         </div>
     );

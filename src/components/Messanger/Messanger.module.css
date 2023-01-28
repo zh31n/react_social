@@ -30,3 +30,31 @@
   width: 83%;
   height: 100%;
 }
+
+.inputMessage{
+  width: 200px;
+  height: 20px;
+  outline: 0;
+  padding-left: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.inputMessage::placeholder{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btnAddMessage{
+  width: 150px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 1rem;
+}

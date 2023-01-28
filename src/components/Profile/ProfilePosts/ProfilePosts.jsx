@@ -10,14 +10,20 @@ let ProfilePosts = (props) => {
 
     let addPost = () => {
         let text = inputValue.current.value;
-        alert(text)
+        props.addPost(text);
+        props.updateNewPostText('');
+    }
+
+    let onPostChange = () =>{
+        let text = inputValue.current.value;
+        props.updateNewPostText(text);
     }
 
     return (
         <div className={s.prof_posts}>
             My posts
             <div className={s.new_posts}>
-                <textarea ref={inputValue} name="" id=""></textarea>
+                <textarea onChange={onPostChange} value={props.newPostText} ref={inputValue} name="" id=""/>
                 <button onClick={addPost}>add post</button>
             </div>
             <div className={s.posts}>

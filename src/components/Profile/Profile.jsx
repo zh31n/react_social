@@ -8,7 +8,7 @@ let Profile = (props) => {
                 <img src="http://www.artmaxtour.ru/upload/iblock/2e3/2e36ad82eed3fd250652815ab9530445.jpg" alt="" />
             </div>
             <div className={s.prof_info}></div>
-            <ProfilePosts state={props.state}/>
+            <ProfilePosts state={props.profilePage} addPost={props.addPost} newPostText={props.profilePage.newPostText} updateNewPostText={props.updateNewPostText} />
         </div>
     );
 }

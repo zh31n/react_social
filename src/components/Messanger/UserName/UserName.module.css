@@ -2,7 +2,7 @@
   width: 136px;
   height: 40px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   text-align: left;
   padding-left: 1rem;
   align-items: center;
@@ -17,7 +17,7 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .user_img{

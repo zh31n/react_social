@@ -1,14 +1,17 @@
+import { renderEntire } from "../render";
 
 let state = {
-    profilePage:{
+    profilePage: {
         posts: [
             { postTxt: 'Здарова епта', likesCount: ' 0' },
             { postTxt: 'Я фронтом скоро стану', likesCount: ' 5' },
             { postTxt: 'Иди своей дорогой сталкер', likesCount: ' 10' }
-        ]
+        ],
+
+        newPostText: 'zh31n'
     },
 
-    messangerPage:{
+    messangerPage: {
         users: [
             { UserName: 'Leha', id: 1 },
             { UserName: 'Sanya', id: 2 },
@@ -48,14 +51,33 @@ let state = {
         ]
     },
 
-    sideBar:{
-        friends:[
+    sideBar: {
+        friends: [
             { FriendName: 'Artur', id: 1 },
             { FriendName: 'Leha', id: 2 },
             { FriendName: 'Sanya', id: 3 },
             { FriendName: 'Nebr', id: 4 }
         ]
     }
+}
+
+export let addPost = () => {
+
+    let newPost = {
+        // id: 5,
+        postTxt: state.profilePage.newPostText,
+        likesCount: '0'
+    };
+
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    renderEntire(state);
+}
+
+export let updateNewPostText = (newText) => {
+
+    state.profilePage.newPostText = newText;
+    renderEntire(state);
 }
 
 export default state;

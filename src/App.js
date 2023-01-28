@@ -16,7 +16,7 @@ const  App = (props) => {
           <Sidebar state={props.state.sideBar} />
           <div className='content'>
             <Routes>
-              <Route path='/Profile/*' element={<Profile state={props.state.profilePage} />} />
+              <Route path='/Profile/*' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
               <Route path='/Messanger/*' element={<Messanger state={props.state.messangerPage} />} />
             </Routes>
           </div>
