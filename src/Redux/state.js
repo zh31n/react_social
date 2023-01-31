@@ -1,4 +1,7 @@
-import { renderEntire } from "../render";
+// import { renderEntire } from "../render";
+let renderEntire = () => {
+    console.log('changed')
+}
 
 let state = {
     profilePage: {
@@ -61,7 +64,7 @@ let state = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
 
     let newPost = {
         // id: 5,
@@ -74,10 +77,14 @@ export let addPost = () => {
     renderEntire(state);
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
 
     state.profilePage.newPostText = newText;
     renderEntire(state);
+}
+
+export const subscribe = (observer) => {
+    renderEntire = observer;
 }
 
 export default state;
