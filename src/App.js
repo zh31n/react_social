@@ -7,7 +7,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 
 
-const  App = (props) => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
@@ -16,7 +16,7 @@ const  App = (props) => {
           <Sidebar state={props.state.sideBar} />
           <div className='content'>
             <Routes>
-              <Route path='/Profile/*' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
+              <Route path='/Profile/*' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
               <Route path='/Messanger/*' element={<Messanger state={props.state.messangerPage} />} />
             </Routes>
           </div>
