@@ -1,7 +1,18 @@
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 
-const ProfileReducer = (state, action) => {
+
+let initialDefault = {
+    posts: [
+        { postTxt: 'Здарова епта', likesCount: ' 0' },
+        { postTxt: 'Я фронтом скоро стану', likesCount: ' 5' },
+        { postTxt: 'Иди своей дорогой сталкер', likesCount: ' 10' }
+    ],
+
+    newPostText: 'zh31n'
+};
+
+const ProfileReducer = (state = initialDefault, action) => {
 
     switch (action.type) {
         case ADD_POST:
