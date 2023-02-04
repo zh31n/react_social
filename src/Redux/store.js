@@ -1,7 +1,11 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import MessageReducer from "./MessageReducer";
+import ProfileReducer from "./ProfileReducer";
+import SidebarReducer from "./SidebarReducer";
+
+// const ADD_POST = 'ADD-POST';
+// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+// const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+// const SEND_MESSAGE = 'SEND-MESSAGE';
 
 
 
@@ -80,54 +84,43 @@ let store = {
 
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                // id: 5,
-                postTxt: this._state.profilePage.newPostText,
-                likesCount: '0'
-            };
 
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.messangerPage.newMessageBody = action.body;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.messangerPage.newMessageBody;
-            this._state.messangerPage.newMessageBody = '';
-            this._state.messangerPage.messages.push({ message: body, id: 4 });
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = ProfileReducer(this._state.profilePage, action);
+        this._state.messangerPage = MessageReducer(this._state.messangerPage, action);
+        this._state.sideBar = SidebarReducer(this._state.sideBar, action);
+
+        this._callSubscriber(this._state);
+
+
+
+        // if (action.type === ADD_POST) {
+        //     let newPost = {
+        //         // id: 5,
+        //         postTxt: this._state.profilePage.newPostText,
+        //         likesCount: '0'
+        //     };
+
+        //     this._state.profilePage.posts.push(newPost);
+        //     this._state.profilePage.newPostText = '';
+        //     this._callSubscriber(this._state);
+        // } else if (action.type === UPDATE_NEW_POST_TEXT) {
+        //     this._state.profilePage.newPostText = action.newText;
+        //     this._callSubscriber(this._state);
+        // } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+        //     this._state.messangerPage.newMessageBody = action.body;
+        //     this._callSubscriber(this._state);
+        // } else if (action.type === SEND_MESSAGE) {
+        //     let body = this._state.messangerPage.newMessageBody;
+        //     this._state.messangerPage.newMessageBody = '';
+        //     this._state.messangerPage.messages.push({ message: body, id: 4 });
+        //     this._callSubscriber(this._state);
+        // }
     }
 }
 
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-}
 
-export const updateNewPostTextActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT, newText: text
-    }
-}
 
-export const sendMessageCreator = () => {
-    return {
-        type: SEND_MESSAGE
-    }
-}
 
-export const updateNewMessageBodyCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY, body: text
-    }
-}
 
 
 

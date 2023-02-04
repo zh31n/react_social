@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../Redux/state';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../Redux/MessageReducer';
 import MessageItem from './MessageItem/MessageItem';
 import s from './Messanger.module.css'
 import UserName from './UserName/UserName';

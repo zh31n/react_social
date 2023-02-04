@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 // import { addPost, subscribe, updateNewPostText } from './Redux/state';
-import store from './Redux/state';
+import store from './Redux/store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

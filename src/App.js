@@ -16,7 +16,7 @@ const App = (props) => {
           <Sidebar state={props.state.sideBar} />
           <div className='content'>
             <Routes>
-              <Route path='/Profile/*' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
+              <Route path='/*' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
               <Route path='/Messanger/*' element={<Messanger  store={props.store} />} />
             </Routes>
           </div>
