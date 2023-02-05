@@ -1,5 +1,5 @@
 import s from './Profile.module.css'
-import ProfilePosts from './ProfilePosts/ProfilePosts';
+import ProfilePostsContainer from './ProfilePosts/ProfilePostsContainer';
 
 let Profile = (props) => {
     return (
@@ -8,7 +8,7 @@ let Profile = (props) => {
                 <img src="http://www.artmaxtour.ru/upload/iblock/2e3/2e36ad82eed3fd250652815ab9530445.jpg" alt="" />
             </div>
             <div className={s.prof_info}></div>
-            <ProfilePosts state={props.profilePage} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} />
+            <ProfilePostsContainer store={props.store}  />
         </div>
     );
 }

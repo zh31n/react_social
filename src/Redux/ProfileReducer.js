@@ -29,22 +29,6 @@ const ProfileReducer = (state = initialDefault, action) => {
             return state;
         default: return state;
     }
-    // if (action.type === ADD_POST) {
-    //     let newPost = {
-    //         // id: 5,
-    //         postTxt: state.newPostText,
-    //         likesCount: '0'
-    //     };
-
-    //     state.posts.push(newPost);
-    //     state.newPostText = '';
-    //     // this._callSubscriber(this._state);
-    // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-    //     state.newPostText = action.newText;
-    //     // this._callSubscriber(this._state);
-    // }
-
-    // return state;
 }
 
 export const addPostActionCreator = () => {

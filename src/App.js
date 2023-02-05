@@ -2,8 +2,8 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Messanger from './components/Messanger/Messanger';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import MessangerContainer from './components/Messanger/MessangerContainer';
 
 
 
@@ -16,8 +16,8 @@ const App = (props) => {
           <Sidebar state={props.state.sideBar} />
           <div className='content'>
             <Routes>
-              <Route path='/*' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-              <Route path='/Messanger/*' element={<Messanger  store={props.store} />} />
+              <Route path='/*' element={<Profile store={props.store} />} />
+              <Route path='/Messanger/*' element={<MessangerContainer store={props.store} />} />
             </Routes>
           </div>
         </div>
