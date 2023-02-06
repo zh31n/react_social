@@ -14,27 +14,27 @@ let Messanger = (props) => {
     let usersElements = state.users.map((user) => { return <UserName UserName={user.UserName} id={user.id} /> })
     let messagesElement = state.messages.map((message) => { return <MessageItem message={message.message} /> })
     let valueInput = React.createRef();
-    
+
 
     let newMessageBody = state.newMessageBody;
 
-    // let onNewMessageChange = (e) => {
-    //     let body = e.target.value;
-    //     props.store.dispatch(updateNewMessageBodyCreator(body));
-    // }
+    let onSendMessageClick = () => {
+        props.sendMessage();
+    }
 
-    // let sendMessage = () => {
-    //     props.store.dispatch(sendMessageCreator());
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.updateNewMessageBody(body);
+    }
 
-    // }
 
     return (
         <div className={s.content}>
             <div className={s.names}>{usersElements}</div>
             <div className={s.messages}>
                 {messagesElement}
-                <input ref={valueInput} value={newMessageBody} onChange={props.onNewMessageChange} className={s.inputMessage} type="text" placeholder='Введите сообщение' />
-                <div className={s.btnAddMessage} onClick={props.sendMessage}>Отправить</div>
+                <input ref={valueInput} value={newMessageBody} onChange={onNewMessageChange} className={s.inputMessage} type="text" placeholder='Введите сообщение' />
+                <div className={s.btnAddMessage} onClick={onSendMessageClick}>Отправить</div>
             </div>
         </div>
     );

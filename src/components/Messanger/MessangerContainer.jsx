@@ -9,10 +9,10 @@ let MessangerContainer = (props) => {
 
     // Снизу методы для вывода данных из массива
 
-    let state = props.store.getState();
+    let state = props.store.getState().messangerPage;
 
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
+    let onNewMessageChange = (body) => {
+        // let body = e.target.value;
         props.store.dispatch(updateNewMessageBodyCreator(body));
     }
 
@@ -20,7 +20,7 @@ let MessangerContainer = (props) => {
         props.store.dispatch(sendMessageCreator());
     }
 
-    return (<Messanger  sendMessage={sendMessage} onNewMessageChange={onNewMessageChange} store={state.messangerPage}/>);
+    return (<Messanger  sendMessage={sendMessage} updateNewMessageBody={onNewMessageChange} store={state}/>);
 }
 
 export default MessangerContainer;
