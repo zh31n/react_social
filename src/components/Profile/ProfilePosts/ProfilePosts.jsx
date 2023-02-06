@@ -19,8 +19,6 @@ let ProfilePosts = (props) => {
         props.updateNewPostText(text)
     }
 
-    console.log(props.NewPostText)
-
     return (
         <div className={s.prof_posts}>
             <h3>My posts</h3>

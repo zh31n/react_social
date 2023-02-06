@@ -1,26 +1,62 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../Redux/MessageReducer';
+import StoreContext from '../../StoreContext';
 import Messanger from './Messanger';
 
 
 
 
-let MessangerContainer = (props) => {
+// let MessangerContainer = (props) => {
 
-    // Снизу методы для вывода данных из массива
+//     // Снизу методы для вывода данных из массива
 
-    let state = props.store.getState().messangerPage;
 
-    let onNewMessageChange = (body) => {
-        // let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+
+//     return (
+//         <StoreContext.Consumer>
+//             {
+//                 (store) => {
+
+//                     let state = store.getState().messangerPage;
+
+//                     let onNewMessageChange = (body) => {
+//                         // let body = e.target.value;
+//                         store.dispatch(updateNewMessageBodyCreator(body));
+//                     }
+
+//                     let sendMessage = () => {
+//                         store.dispatch(sendMessageCreator());
+//                     }
+
+//                     return (
+//                         <Messanger sendMessage={sendMessage} updateNewMessageBody={onNewMessageChange} store={store.getState().messangerPage} />
+//                     )
+//                 }
+//             }
+//         </StoreContext.Consumer>
+//     );
+// }
+
+let mapStateToProps = (state) => {
+    return {
+        store: state.messangerPage,
+
     }
 
-    let sendMessage = () => {
-        props.store.dispatch(sendMessageCreator());
-    }
-
-    return (<Messanger  sendMessage={sendMessage} updateNewMessageBody={onNewMessageChange} store={state}/>);
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        sendMessage: () => { 
+            dispatch(sendMessageCreator());
+        },
+        updateNewMessageBody: (body) => { 
+            dispatch(updateNewMessageBodyCreator(body));
+         }
+    }
+}
+
+let MessangerContainer = connect(mapStateToProps, mapDispatchToProps)(Messanger);
 
 export default MessangerContainer;

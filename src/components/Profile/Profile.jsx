@@ -8,7 +8,7 @@ let Profile = (props) => {
                 <img src="http://www.artmaxtour.ru/upload/iblock/2e3/2e36ad82eed3fd250652815ab9530445.jpg" alt="" />
             </div>
             <div className={s.prof_info}></div>
-            <ProfilePostsContainer store={props.store}  />
+            <ProfilePostsContainer />
         </div>
     );
 }

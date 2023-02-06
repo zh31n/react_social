@@ -13,11 +13,11 @@ const App = (props) => {
       <div className='app_wrapper'>
         <Header />
         <div className='app_inner'>
-          <Sidebar state={props.state.sideBar} />
+          <Sidebar />
           <div className='content'>
             <Routes>
-              <Route path='/*' element={<Profile store={props.store} />} />
-              <Route path='/Messanger/*' element={<MessangerContainer store={props.store} />} />
+              <Route path='/*' element={<Profile  />} />
+              <Route path='/Messanger/*' element={<MessangerContainer  />} />
             </Routes>
           </div>
         </div>
