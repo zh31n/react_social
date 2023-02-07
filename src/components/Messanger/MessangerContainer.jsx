@@ -7,36 +7,7 @@ import Messanger from './Messanger';
 
 
 
-// let MessangerContainer = (props) => {
 
-//     // Снизу методы для вывода данных из массива
-
-
-
-//     return (
-//         <StoreContext.Consumer>
-//             {
-//                 (store) => {
-
-//                     let state = store.getState().messangerPage;
-
-//                     let onNewMessageChange = (body) => {
-//                         // let body = e.target.value;
-//                         store.dispatch(updateNewMessageBodyCreator(body));
-//                     }
-
-//                     let sendMessage = () => {
-//                         store.dispatch(sendMessageCreator());
-//                     }
-
-//                     return (
-//                         <Messanger sendMessage={sendMessage} updateNewMessageBody={onNewMessageChange} store={store.getState().messangerPage} />
-//                     )
-//                 }
-//             }
-//         </StoreContext.Consumer>
-//     );
-// }
 
 let mapStateToProps = (state) => {
     return {

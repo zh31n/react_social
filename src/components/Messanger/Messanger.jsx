@@ -11,8 +11,8 @@ let Messanger = (props) => {
     // Снизу методы для вывода данных из массива
 
     let state = props.store;
-    let usersElements = state.users.map((user) => { return <UserName UserName={user.UserName} id={user.id} /> })
-    let messagesElement = state.messages.map((message) => { return <MessageItem message={message.message} /> })
+    let usersElements = state.users.map((user) => { return <UserName UserName={user.UserName} key={user.id}  id={user.id} /> })
+    let messagesElement = state.messages.map((message) => { return <MessageItem key={message.id} message={message.message} /> })
     let valueInput = React.createRef();
 
 

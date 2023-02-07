@@ -6,7 +6,7 @@ import s from './ProfilePosts.module.css'
 
 let ProfilePosts = (props) => {
 
-    let postElements = props.posts.map(post => <PostItem message={post.postTxt} likes={post.likesCount} />)
+    let postElements = props.posts.map(post => <PostItem message={post.postTxt} key={post.id} likes={post.likesCount} />)
 
     let inputValue = React.createRef();
 

@@ -46,32 +46,17 @@ let initialDefault = {
 const MessageReducer = (state = initialDefault, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:{
-            let stateCopy = {...state};
-            stateCopy.newMessageBody = action.body;
-            return stateCopy;
+        case UPDATE_NEW_MESSAGE_BODY: {
+            return { ...state, newMessageBody: action.body };
         }
-        case SEND_MESSAGE:{
-            let stateCopy = {...state};
-            let body = stateCopy.newMessageBody;
-            stateCopy.newMessageBody = '';
-            stateCopy.messages.push({ message: body, id: 4 });
-            return stateCopy;
+
+        case SEND_MESSAGE: {
+            let body = state.newMessageBody;
+            return { ...state, newMessageBody: '', messages: [...state.messages, { message: body, id: 4 }] };
         }
-        default: return state;
+        default:
+            return state;
     }
-
-    // if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-    //     state.newMessageBody = action.body;
-    //     // this._callSubscriber(this._state);
-    // } else if (action.type === SEND_MESSAGE) {
-    //     let body = state.newMessageBody;
-    //     state.newMessageBody = '';
-    //     state.messages.push({ message: body, id: 4 });
-    //     // this._callSubscriber(this._state);
-    // }
-
-    // return state;
 }
 
 export const sendMessageCreator = () => {
