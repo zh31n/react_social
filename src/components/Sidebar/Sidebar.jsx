@@ -4,7 +4,9 @@ import s from './Sidebar.module.css'
 
 let Sidebar = (props) =>{
 
-    // let friendElements = props.state.friends.map( (friend) => <FriendItem state={friend.FriendName} />);
+    let state = props.store;
+
+    let friendElements = state.friends.map( (friend) => <FriendItem state={friend.FriendName} />);
 
     return(
         <div className={s.nav}>
@@ -14,8 +16,7 @@ let Sidebar = (props) =>{
             <a href='/'>Friends</a>
             <a href='/'>Music</a>
             <div className={s.block_friends}>
-                {/* <FriendItem state={props.state.friends} /> */}
-                {/* {friendElements} */}
+                {friendElements}
             </div>
         </div>
     );

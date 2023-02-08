@@ -1,7 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../Redux/MessageReducer';
-import StoreContext from '../../StoreContext';
 import Messanger from './Messanger';
 
 
