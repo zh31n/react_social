@@ -21,7 +21,9 @@
   width: 82%;
   background-color: #7fffd4;
   border-radius: 20px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90vh;
 }
 
 
