@@ -84,3 +84,41 @@
   font-size: 19px;
   margin-bottom: 0;
 }
+
+.buttons_page{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+  overflow-y: auto;
+}
+
+.buttons_page div:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+
+.buttons_page div{
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.buttons_page div:first-child{
+  margin-left: 0;
+}
+
+.selected_page{
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 21px;
+}
+
+
