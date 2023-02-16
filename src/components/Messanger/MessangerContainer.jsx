@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../Redux/MessageReducer';
+import { sendMessage, updateNewMessageBody } from '../../Redux/MessageReducer';
 import Messanger from './Messanger';
 
 
@@ -14,17 +14,17 @@ let mapStateToProps = (state) => {
 
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        sendMessage: () => { 
-            dispatch(sendMessageCreator());
-        },
-        updateNewMessageBody: (body) => { 
-            dispatch(updateNewMessageBodyCreator(body));
-         }
-    }
-}
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         sendMessage: () => { 
+//             dispatch(sendMessageCreator());
+//         },
+//         updateNewMessageBody: (body) => { 
+//             dispatch(updateNewMessageBodyCreator(body));
+//          }
+//     }
+// }
 
-let MessangerContainer = connect(mapStateToProps, mapDispatchToProps)(Messanger);
+let MessangerContainer = connect(mapStateToProps, { sendMessage, updateNewMessageBody })(Messanger);
 
 export default MessangerContainer;

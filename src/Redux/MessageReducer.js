@@ -59,13 +59,13 @@ const MessageReducer = (state = initialDefault, action) => {
     }
 }
 
-export const sendMessageCreator = () => {
+export const sendMessage = () => {
     return {
         type: SEND_MESSAGE
     }
 }
 
-export const updateNewMessageBodyCreator = (text) => {
+export const updateNewMessageBody = (text) => {
     return {
         type: UPDATE_NEW_MESSAGE_BODY, body: text
     }
