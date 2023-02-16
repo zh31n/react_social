@@ -2,6 +2,7 @@
   width: 97%;
   background-color: #7fffd4;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .users{
