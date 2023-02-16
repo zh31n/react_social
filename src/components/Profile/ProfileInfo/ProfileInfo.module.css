@@ -1,0 +1,53 @@
+.content {
+    width: 100%;
+    background-color: #7fffd4;
+}
+
+
+.prof_img {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+}
+
+.prof_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.avatarka{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.avatarka img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inform{
+    margin-left: 1rem;
+}
+
+.prof_info{
+    display: flex;
+    align-items: center;
+}
+
+.nickName{
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.aboutMe{
+    font-weight: 500;
+    font-size: 18px;
+}

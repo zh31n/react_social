@@ -36,7 +36,7 @@ class UsersContainer extends React.Component {
             pages.push(i)
         };
 
-        return (<>{this.props.isFetching ? <Preloader /> : null}< Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} currentPage={this.props.currentPage} onPageChanged={this.onPageChanged} users={this.props.users} follow={this.props.follow} unFollow={this.props.unFollow} isFetching={this.props.isFetching} /></>)
+        return (<>{this.props.isFetching ? <Preloader /> : null}<Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} currentPage={this.props.currentPage} onPageChanged={this.onPageChanged} users={this.props.users} follow={this.props.follow} unFollow={this.props.unFollow} isFetching={this.props.isFetching} /></>)
     }
 }
 

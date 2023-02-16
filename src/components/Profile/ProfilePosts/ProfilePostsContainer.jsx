@@ -12,17 +12,6 @@ let mapStateToProps = (state) => {
 
 }
 
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         updateNewPostText: (text) => {
-//             let action = updateNewPostTextActionCreator(text)
-//             dispatch(action);
-//         },
-//         addPost: () => {
-//             dispatch(addPostActionCreator());
-//         }
-//     }
-// }
 
 let ProfilePostsContainer = connect(mapStateToProps, { addPost, updateNewPostText })(ProfilePosts);
 
