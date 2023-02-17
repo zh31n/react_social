@@ -27,5 +27,17 @@
     border: 1px solid black;
     text-decoration: none;
     color: black;
+}
+
+.block_info_auth{
     float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.userName{
+    font-weight: 600;
+    font-size: 20px;
 }
