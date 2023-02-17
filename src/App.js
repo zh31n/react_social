@@ -17,9 +17,10 @@ const App = () => {
           <SidebarContainer />
           <div className='content'>
             <Routes>
-              <Route path='/*' element={<ProfileContainer />} />
-              <Route path='/Messanger/*' element={<MessangerContainer />} />
-              <Route path='/Users/*' element={<UsersContainer />} />
+              <Route path='/profile/:userId?' element={<ProfileContainer />} />
+              {/* <Route path='/*' element={<ProfileContainer />} /> */}
+              <Route path='/messanger/*' element={<MessangerContainer />} />
+              <Route path='/users/*' element={<UsersContainer />} />
             </Routes>
           </div>
         </div>
