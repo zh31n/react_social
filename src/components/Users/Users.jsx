@@ -33,21 +33,24 @@ let Users = (props) => {
                             <div>
                                 {
                                     user.followed
-                                        ? <div onClick={() => {
+                                        ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                                            props.toggleFollowingProgress(true, user.id);
                                             getFollowId(user.id).then(response => {
                                                 if (response.resultCode === 0) {
                                                     props.follow(user.id);
                                                 }
+                                                props.toggleFollowingProgress(false, user.id);
                                             });
-                                        }} className={s.follow_btn}>follow</div>
-                                        : <div onClick={() => {
-                                            debugger;
+                                        }} className={s.follow_btn}>follow</button>
+                                        : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                                            props.toggleFollowingProgress(true, user.id);
                                             getUnFollowId(user.id).then(response => {
                                                 if (response.resultCode === 0) {
                                                     props.unFollow(user.id);
                                                 }
+                                                props.toggleFollowingProgress(false, user.id);
                                             });
-                                        }} className={s.follow_btn}>unfollow</div>
+                                        }} className={s.follow_btn}>unfollow</button>
                                 }
                             </div>
                         </div>
