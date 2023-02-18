@@ -1,6 +1,7 @@
 import s from './ProfileInfo.module.css'
 import profileBack from '../../../img/ProfileBack.jpg'
 import Preloader from '../../Preloader/Preloader';
+import userImg from '../../../img/userImg.jpg';
 
 let ProfileInfo = (props) => {
     if (!props.profile) {
@@ -14,7 +15,7 @@ let ProfileInfo = (props) => {
             </div>
             <div className={s.prof_info}>
                 <div className={s.avatarka}>
-                    <img src={props.profile.photos.large} alt="" />
+                    <img src={props.profile.photos.large != null || undefined ? props.profile.photos.large : userImg} alt="" />
                 </div>
                 <div className={s.inform}>
                     <div className={s.nickName}>{props.profile.fullName}</div>
