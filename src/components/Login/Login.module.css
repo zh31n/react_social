@@ -1,0 +1,64 @@
+.content {
+    width: 97%;
+    background-color: #7fffd4;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.loginTitle {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 1rem;
+}
+
+.login {
+    width: 400px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.login_input {
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+    margin-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0.5rem;
+}
+
+.login_input input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: rgb(255, 255, 255, 0);
+    outline: none;
+    font-family: serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.signButton {
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+}

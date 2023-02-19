@@ -5,6 +5,7 @@ import SidebarContainer from './components/Sidebar/SidebarContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 
 
@@ -18,7 +19,7 @@ const App = () => {
           <div className='content'>
             <Routes>
               <Route path='/profile/:userId?' element={<ProfileContainer />} />
-              {/* <Route path='/*' element={<ProfileContainer />} /> */}
+              <Route path='/login/*' element={<Login />} />
               <Route path='/messanger/*' element={<MessangerContainer />} />
               <Route path='/users/*' element={<UsersContainer />} />
             </Routes>
