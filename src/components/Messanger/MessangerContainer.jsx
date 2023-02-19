@@ -10,6 +10,7 @@ import Messanger from './Messanger';
 let mapStateToProps = (state) => {
     return {
         store: state.messangerPage,
+        isAuth: state.auth.isAuth
     }
 
 }
