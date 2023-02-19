@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import MessageItem from './MessageItem/MessageItem';
 import s from './Messanger.module.css'
 import UserName from './UserName/UserName';
@@ -28,7 +27,7 @@ let Messanger = (props) => {
         props.updateNewMessageBody(body);
     }
 
-    if (!props.isAuth) return <Navigate to={'/login'} />
+    // if (!props.isAuth) return <Navigate to={'/login'} />
 
     return (
         <div className={s.content}>
