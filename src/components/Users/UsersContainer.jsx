@@ -13,13 +13,6 @@ class UsersContainer extends React.Component {
     }
     onPageChanged = (pageNumber) => {
         this.props.getUsersThunk(pageNumber, this.props.pageSize);
-        // getPageChengedThunk(pageNumber, this.props.pageSize);
-        // this.props.setCurrentPage(pageNumber);
-        // this.props.toggleIsFetching(true);
-        // getUsers(pageNumber, this.props.pageSize).then(response => {
-        //     this.props.toggleIsFetching(false);
-        //     this.props.setUsers(response.items)
-        // })
     }
 
     render() {

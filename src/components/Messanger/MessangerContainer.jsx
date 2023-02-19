@@ -14,16 +14,6 @@ let mapStateToProps = (state) => {
 
 }
 
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         sendMessage: () => { 
-//             dispatch(sendMessageCreator());
-//         },
-//         updateNewMessageBody: (body) => { 
-//             dispatch(updateNewMessageBodyCreator(body));
-//          }
-//     }
-// }
 
 let MessangerContainer = connect(mapStateToProps, { sendMessage, updateNewMessageBody })(Messanger);
 

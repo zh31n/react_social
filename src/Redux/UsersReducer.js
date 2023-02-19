@@ -62,7 +62,7 @@ const UsersReducer = (state = initialDefault, action) => {
                 ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id != action.userId)
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
 
@@ -84,6 +84,8 @@ export const setTotalUsersCount = (totalUsersCount) => { return { type: SET_TOTA
 export const toggleIsFetching = (isFetching) => { return { type: TOGGLE_IS_FETCHING, isFetching } }
 
 export const toggleFollowingProgress = (isFetching, userId) => { return { type: TOGGLE_IS_FOLLWING_PROGRESS, isFetching, userId } }
+
+
 
 
 
@@ -122,15 +124,6 @@ export const unFollowThunk = (userId) => {
     }
 }
 
-// export const getPageChengedThunk = (pageNumber, pageSize) => {
-//     return (dispatch) => {
-//         dispatch(setCurrentPage(pageNumber));
-//         dispatch(toggleIsFetching(true));
-//         getUsers(pageNumber, pageSize).then(response => {
-//             dispatch(toggleIsFetching(false));
-//             dispatch(setUsers(response.items))
-//         })
-//     }
-// }
+
 
 export default UsersReducer;
