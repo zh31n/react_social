@@ -20,7 +20,7 @@ let ProfileInfo = (props) => {
                 <div className={s.inform}>
                     <div className={s.nickName}>{props.profile.fullName}</div>
                     <div className={s.aboutMe}>{props.profile.aboutMe}</div>
-                    <ProfileStatus status={'Hello boy'}/>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 </div>
             </div>
         </div>
