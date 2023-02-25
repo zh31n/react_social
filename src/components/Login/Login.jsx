@@ -31,7 +31,7 @@ const Login = () => {
     return (
         <div className={s.content}>
             <div className={s.loginTitle}>Sign in</div>
-            <ReduxLoginForm  onSubmit={onSubmit}/>
+            <ReduxLoginForm onSubmit={onSubmit} />
         </div>)
 }
 
