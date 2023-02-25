@@ -1,0 +1,14 @@
+
+.inputForm textarea {
+    outline: 0;
+}
+
+.inputForm.error input,
+.inputForm.error textarea {
+    border: 2px solid red;
+    outline: 0;
+}
+
+.inputForm.error span {
+    color: red;
+}

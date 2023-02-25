@@ -1,4 +1,4 @@
-import loaderGif from '../../img/loading.gif'
+import loaderGif from '../../../img/loading.gif'
 import s from './Preloader.module.css'
 
 const Preloader = () => {

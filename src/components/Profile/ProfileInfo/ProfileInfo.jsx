@@ -1,8 +1,8 @@
 import s from './ProfileInfo.module.css'
 import profileBack from '../../../img/ProfileBack.jpg'
-import Preloader from '../../Preloader/Preloader';
 import userImg from '../../../img/userImg.jpg';
 import ProfileStatus from '../ProfileStatus/ProfileStatus';
+import Preloader from '../../common/Preloader/Preloader';
 
 let ProfileInfo = (props) => {
     if (!props.profile) {
@@ -26,5 +26,7 @@ let ProfileInfo = (props) => {
         </div>
     );
 }
+
+
 
 export default ProfileInfo;

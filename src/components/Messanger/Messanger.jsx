@@ -3,13 +3,16 @@ import MessageItem from './MessageItem/MessageItem';
 import s from './Messanger.module.css'
 import UserName from './UserName/UserName';
 import { Field, reduxForm } from 'redux-form'
+import { maxLengthCreator, requried } from '../../Utils/Validators/validators';
+import { Input } from '../common/FormsControls/FormsControls';
 
+let maxLength100 = maxLengthCreator(100);
 
 
 const MessangerForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component={'input'} className={s.inputMessage} placeholder='Введите сообщение' name={'message'} />
+            <Field component={Input} className={s.inputMessage} validate={[requried, maxLength100]} placeholder='Введите сообщение' name={'message'} />
             <button className={s.btnAddMessage}>Отправить</button>
         </form>
     )
@@ -36,8 +39,8 @@ let Messanger = (props) => {
         <div className={s.content}>
             <div className={s.names}>{usersElements}</div>
             <div className={s.messages}>
-                <ReduxMessangerForm onSubmit={addMessage} />
                 {messagesElement}
+                <ReduxMessangerForm onSubmit={addMessage} />
             </div>
         </div>
     );
