@@ -1,4 +1,7 @@
+import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form'
+import { loginThunk } from '../../Redux/AuthReducer';
 import s from './Login.module.css'
 
 
@@ -10,7 +13,7 @@ const LoginForm = (props) => {
                     <Field component={'input'} name={"email"} placeholder={'Your email'} />
                 </div>
                 <div className={s.login_input}>
-                    <Field component={'input'} name={"password"} placeholder={'Your password'} />
+                    <Field component={'input'} name={"password"} placeholder={'Your password'} type={'password'} />
                 </div>
                 <div className={s.checkboxRemeber}>
                     <Field component={'input'} type={"checkbox"} name={'rememberMe'} /> remeber me
@@ -23,16 +26,26 @@ const LoginForm = (props) => {
 
 const ReduxLoginForm = reduxForm({ form: 'login' })(LoginForm);
 
-const Login = () => {
+const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.loginThunk(formData.email, formData.password, formData.remeberMe)
     }
 
+    if (props.isAuth) {
+        return <Navigate to={'/profile'} />
+    }
     return (
         <div className={s.content}>
             <div className={s.loginTitle}>Sign in</div>
             <ReduxLoginForm onSubmit={onSubmit} />
+
         </div>)
+
+
 }
 
-export default Login;
+const mapStateToProps = (state) =>({
+    isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps, { loginThunk })(Login);

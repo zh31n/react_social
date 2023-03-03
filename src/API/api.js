@@ -11,10 +11,6 @@ export const UsersApi = {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`,)
             .then(response => response.data)
     },
-    // getProfile(userId) {
-    //     return instance.get(`profile/${userId}`)
-    //         .then(response => response.data)
-    // },
     getFollowId(id) {
         return instance.delete(`follow/${id}`,)
             .then(response => response.data)
@@ -29,6 +25,14 @@ export const authAPI = {
     getAuth() {
         return instance.get('auth/me',)
             .then(response => response.data)
+    },
+    Login(email, password, remeberMe = false) {
+        return instance.post('auth/login', { email, password, remeberMe })
+            .then(response => response.data)
+    },
+    Logout() {
+        return instance.delete('auth/login')
+            .then(response => response.data);
     }
 }
 
@@ -41,6 +45,6 @@ export const profileApi = {
         return instance.get(`profile/status/` + userId).then(response => response.data)
     },
     updateStatus(status) {
-        return instance.put(`profile/status`, { status:status })
+        return instance.put(`profile/status`, { status: status })
     }
 }

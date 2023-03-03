@@ -20,5 +20,5 @@ let mapStateToProps = (state) => {
 
 
 export default compose(connect(mapStateToProps, { sendMessage }),
-    // withAuthRedirect
+    withAuthRedirect
 )(Messanger);;

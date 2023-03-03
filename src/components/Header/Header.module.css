@@ -40,4 +40,12 @@
 .userName{
     font-weight: 600;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.userName img{
+    width: 25px;
+    height: 25px;
 }
